@@ -18,7 +18,7 @@ export default plugin<FastifyCloudinaryOptions>(
       const parsed = urlToHttpOptions(new URL(url));
 
       return {
-        cloud_name: parsed.host || undefined,
+        cloud_name: parsed.hostname || undefined,
         api_key: parsed.auth?.split(':')[0],
         api_secret: parsed.auth?.split(':')[1],
         ...options,
