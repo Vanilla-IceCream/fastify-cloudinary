@@ -10,11 +10,12 @@ export default defineConfig({
       fileName: 'fastify-cloudinary',
     },
     rollupOptions: {
-      external: ['cloudinary', 'fastify-plugin'],
+      external: ['url', 'fastify-plugin', 'cloudinary'],
       output: {
         globals: {
-          cloudinary: 'Cloudinary',
+          url: 'url',
           'fastify-plugin': 'FastifyPlugin',
+          cloudinary: 'Cloudinary',
         },
       },
     },

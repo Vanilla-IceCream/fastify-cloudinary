@@ -1,29 +1,27 @@
 import type { ConfigOptions } from 'cloudinary';
+import type { v2 as Cloudinary } from 'cloudinary';
+import { urlToHttpOptions } from 'url';
 import plugin from 'fastify-plugin';
 import { v2 as cloudinary } from 'cloudinary';
 
-interface Options extends Omit<ConfigOptions, 'cloud_name' | 'api_key' | 'api_secret'> {
-  url: string;
+type FastifyCloudinaryOptions = { url?: string } & ConfigOptions;
+
+declare module 'fastify' {
+  interface FastifyInstance {
+    cloudinary: typeof Cloudinary;
+  }
 }
 
-export default plugin(
-  async (instance, options: Options) => {
-    if (!options.url) throw Error('`url` parameter is mandatory');
-
-    const parseCloudinaryUrl = (str: string) => {
-      const parsed = new URL(str);
-
-      const omit = <T, U extends keyof T>(obj: T, keys: U[]): Omit<T, U> =>
-        (Object.keys(obj) as U[]).reduce(
-          (acc, curr) => (keys.includes(curr) ? acc : { ...acc, [curr]: obj[curr] }),
-          {} as Omit<T, U>,
-        );
+export default plugin<FastifyCloudinaryOptions>(
+  async (instance, options) => {
+    const parseCloudinaryUrl = (url: string = '') => {
+      const parsed = urlToHttpOptions(new URL(url));
 
       return {
-        cloud_name: parsed.host,
+        cloud_name: parsed.host || undefined,
         api_key: parsed.auth?.split(':')[0],
         api_secret: parsed.auth?.split(':')[1],
-        ...omit(options, ['url']),
+        ...options,
       };
     };
 

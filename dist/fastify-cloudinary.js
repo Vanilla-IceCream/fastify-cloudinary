@@ -1,23 +1,19 @@
-import m from "fastify-plugin";
-import { v2 as s } from "cloudinary";
-const h = m(
-  async (l, r) => {
-    if (!r.url)
-      throw Error("`url` parameter is mandatory");
-    const u = (d) => {
-      var a, i;
-      const e = new URL(d), c = (n, f) => Object.keys(n).reduce(
-        (o, t) => f.includes(t) ? o : { ...o, [t]: n[t] },
-        {}
-      );
+import { urlToHttpOptions as p } from "url";
+import u from "fastify-plugin";
+import { v2 as i } from "cloudinary";
+const f = u(
+  async (e, t) => {
+    const n = (s = "") => {
+      var o, a;
+      const r = p(new URL(s));
       return {
-        cloud_name: e.host,
-        api_key: (a = e.auth) == null ? void 0 : a.split(":")[0],
-        api_secret: (i = e.auth) == null ? void 0 : i.split(":")[1],
-        ...c(r, ["url"])
+        cloud_name: r.host || void 0,
+        api_key: (o = r.auth) == null ? void 0 : o.split(":")[0],
+        api_secret: (a = r.auth) == null ? void 0 : a.split(":")[1],
+        ...t
       };
     };
-    s.config(u(r.url)), l.decorate("cloudinary", s);
+    i.config(n(t.url)), e.decorate("cloudinary", i);
   },
   {
     fastify: "4.x",
@@ -25,5 +21,5 @@ const h = m(
   }
 );
 export {
-  h as default
+  f as default
 };
