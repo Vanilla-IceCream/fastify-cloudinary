@@ -14,6 +14,16 @@ $ yarn add fastify-cloudinary
 
 ## Usage
 
+```js
+// esm
+import cloudinary from 'fastify-cloudinary';
+
+// cjs
+const cloudinary = require('fastify-cloudinary');
+```
+
+Upload stream:
+
 ```ts
 import stream from 'stream';
 import util from 'util';

@@ -1,8 +1,8 @@
 {
   "name": "fastify-cloudinary",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "The Cloudinary Fastify SDK allows you to quickly and easily integrate your application with Cloudinary. Effortlessly optimize and transform your cloud's assets.",
-  "main": "./dist/fastify-cloudinary.umd.cjs",
+  "main": "./dist/fastify-cloudinary.cjs",
   "module": "./dist/fastify-cloudinary.js",
   "types": "./dist/fastify-cloudinary.d.ts",
   "type": "module",
@@ -12,7 +12,7 @@
   "exports": {
     ".": {
       "import": "./dist/fastify-cloudinary.js",
-      "require": "./dist/fastify-cloudinary.umd.cjs"
+      "require": "./dist/fastify-cloudinary.cjs"
     }
   },
   "scripts": {
@@ -26,7 +26,8 @@
   },
   "keywords": [
     "fastify",
-    "cloudinary"
+    "cloudinary",
+    "multipart"
   ],
   "author": "Vanilla IceCream",
   "license": "MIT",

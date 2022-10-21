@@ -1,11 +1,11 @@
-import { urlToHttpOptions as p } from "url";
-import u from "fastify-plugin";
-import { v2 as e } from "cloudinary";
-const f = u(
-  async (i, t) => {
-    const n = (s = "") => {
+import { urlToHttpOptions as u } from "url";
+import l from "fastify-plugin";
+import { v2 as i } from "cloudinary";
+const d = l(
+  async (n, t) => {
+    const e = (s = "") => {
       var a, o;
-      const r = p(new URL(s));
+      const r = u(new URL(s));
       return {
         cloud_name: r.hostname || void 0,
         api_key: (a = r.auth) == null ? void 0 : a.split(":")[0],
@@ -13,7 +13,7 @@ const f = u(
         ...t
       };
     };
-    e.config(n(t.url)), i.decorate("cloudinary", e);
+    i.config(e(t.url)), n.decorate("cloudinary", i);
   },
   {
     fastify: "4.x",
@@ -21,5 +21,5 @@ const f = u(
   }
 );
 export {
-  f as default
+  d as default
 };
