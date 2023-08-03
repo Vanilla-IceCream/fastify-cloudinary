@@ -2,6 +2,8 @@ import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 
+import pkg from './package.json';
+
 export default defineConfig({
   build: {
     lib: {
@@ -9,8 +11,12 @@ export default defineConfig({
       formats: ['es', 'cjs'],
     },
     rollupOptions: {
-      external: ['url', 'fastify-plugin', 'cloudinary'],
+      external: ['url', ...Object.keys(pkg.dependencies)],
     },
   },
-  plugins: [dts()],
+  plugins: [
+    dts({
+      exclude: ['**/__tests__/**'],
+    }),
+  ],
 });

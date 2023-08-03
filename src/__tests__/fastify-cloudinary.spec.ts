@@ -1,7 +1,14 @@
+import type { FastifyInstance } from 'fastify';
 import { beforeEach, afterEach, test, expect } from 'vitest';
 import fastify from 'fastify';
 
-import cloudinary from './fastify-cloudinary';
+import cloudinary from '../fastify-cloudinary';
+
+declare module 'vitest' {
+  export interface TestContext {
+    app: FastifyInstance;
+  }
+}
 
 beforeEach(async (ctx) => {
   ctx.app = fastify();

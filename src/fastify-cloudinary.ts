@@ -28,8 +28,6 @@ export default plugin<FastifyCloudinaryOptions>(
     cloudinary.config(parseCloudinaryUrl(options.url));
 
     instance.decorate('cloudinary', cloudinary);
-
-    return;
   },
   {
     fastify: '4.x',

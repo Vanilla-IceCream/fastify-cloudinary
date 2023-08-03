@@ -1,15 +1,19 @@
 # fastify-cloudinary
 
-The Cloudinary Fastify SDK allows you to quickly and easily integrate your application with Cloudinary. Effortlessly optimize and transform your cloud's assets.
+Plugin to share a common Cloudinary connection across Fastify.
 
-## Install
+## Installation
 
-```bash
+Install `fastify-cloudinary` with your favorite package manager:
+
+```sh
 $ npm i fastify-cloudinary
+# or
+$ yarn add fastify-cloudinary
 # or
 $ pnpm i fastify-cloudinary
 # or
-$ yarn add fastify-cloudinary
+$ bun add fastify-cloudinary
 ```
 
 ## Usage
@@ -22,7 +26,7 @@ import cloudinary from 'fastify-cloudinary';
 const cloudinary = require('fastify-cloudinary');
 ```
 
-Upload stream:
+### Upload stream
 
 ```ts
 import stream from 'stream';
