@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fastify/multipart": "^8.1.0",
+    "@fastify/one-line-logger": "^1.2.0",
+    "@fastify/type-provider-typebox": "^4.0.0",
+    "@sinclair/typebox": "^0.32.13",
+    "fastify": "^4.26.0",
+    "fastify-cloudinary": "workspace:^",
+    "fastify-plugin": "^4.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.16",
+    "process-envify": "^2.0.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.12",
+    "vite-plugin-fastify": "^1.2.5",
+    "vite-plugin-fastify-routes": "^1.1.0"
+  }
+}
