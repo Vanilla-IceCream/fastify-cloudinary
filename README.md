@@ -47,6 +47,8 @@ fastify.post('/file-uploads', async (req, reply) => {
     fastify.cloudinary.uploader.upload_stream({ public_id: data.fieldname }),
   );
 
-  return { message: 'hi' };
+  return { message: 'OK' };
 });
 ```
+
+See the [examples](./examples) folder for more details.

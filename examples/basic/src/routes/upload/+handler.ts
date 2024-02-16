@@ -6,6 +6,7 @@ import { Type } from '@sinclair/typebox';
 const pipeline = util.promisify(stream.pipeline);
 
 export default (async (app) => {
+  // $ node client.mjs
   app.post(
     '',
     {
@@ -13,7 +14,7 @@ export default (async (app) => {
         response: {
           200: Type.Object({
             message: Type.String(),
-            url: Type.String(),
+            url: Type.Optional(Type.String()),
           }),
         },
       },
@@ -21,7 +22,7 @@ export default (async (app) => {
     async (req, reply) => {
       const data = await req.file();
 
-      if (!data) return reply.code(400);
+      if (!data) return reply.code(400).send({ message: 'Bad Request' });
 
       await pipeline(
         data.file,
