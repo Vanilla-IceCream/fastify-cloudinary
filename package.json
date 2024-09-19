@@ -1,6 +1,6 @@
 {
   "name": "fastify-cloudinary",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "Plugin to share a common Cloudinary connection across Fastify.",
   "main": "./dist/fastify-cloudinary.cjs",
   "module": "./dist/fastify-cloudinary.js",
@@ -36,18 +36,18 @@
   },
   "homepage": "https://github.com/Vanilla-IceCream/fastify-cloudinary#readme",
   "dependencies": {
-    "cloudinary": "^2.0.1",
-    "fastify-plugin": "^4.5.1"
+    "cloudinary": "^2.5.0",
+    "fastify-plugin": "^5.0.0"
   },
   "devDependencies": {
-    "@types/node": "^20.11.17",
-    "@vitest/coverage-v8": "^1.2.2",
-    "axios": "^1.6.7",
-    "fastify": "^4.26.1",
+    "@types/node": "^20.16.5",
+    "@vitest/coverage-v8": "^2.1.1",
+    "axios": "^1.7.7",
+    "fastify": "^5.0.0",
     "form-data": "^4.0.0",
-    "typescript": "^5.3.3",
-    "vite": "^5.1.2",
-    "vite-plugin-dts": "^3.7.2",
-    "vitest": "^1.2.2"
+    "typescript": "^5.6.2",
+    "vite": "^5.4.6",
+    "vite-plugin-dts": "^4.2.1",
+    "vitest": "^2.1.1"
   }
 }

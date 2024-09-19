@@ -52,3 +52,7 @@ fastify.post('/file-uploads', async (req, reply) => {
 ```
 
 See the [examples](./examples) folder for more details.
+
+## V2 Migration Guide
+
+Support Fastify v5

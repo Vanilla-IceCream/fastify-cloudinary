@@ -30,7 +30,7 @@ export default plugin<FastifyCloudinaryOptions>(
     instance.decorate('cloudinary', cloudinary);
   },
   {
-    fastify: '4.x',
+    fastify: '5.x',
     name: 'fastify-cloudinary',
   },
 );

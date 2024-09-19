@@ -7,20 +7,20 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@fastify/multipart": "^8.1.0",
-    "@fastify/one-line-logger": "^1.2.0",
-    "@fastify/type-provider-typebox": "^4.0.0",
-    "@sinclair/typebox": "^0.32.14",
-    "fastify": "^4.26.1",
+    "@fastify/multipart": "^9.0.0",
+    "@fastify/one-line-logger": "^2.0.0",
+    "@fastify/type-provider-typebox": "^5.0.0",
+    "@sinclair/typebox": "^0.33.12",
+    "fastify": "^5.0.0",
     "fastify-cloudinary": "workspace:^",
-    "fastify-plugin": "^4.5.1"
+    "fastify-plugin": "^5.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
     "process-envify": "^2.0.0",
-    "typescript": "^5.3.3",
-    "vite": "^5.1.2",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.6",
     "vite-plugin-fastify": "^1.2.5",
-    "vite-plugin-fastify-routes": "^1.1.0"
+    "vite-plugin-fastify-routes": "^1.1.1"
   }
 }
